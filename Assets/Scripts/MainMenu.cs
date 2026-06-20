@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour
    
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         int highScore = SaveLoadManager.Instance.LoadHighScore();
         highScoreUI.text = "Top Wave Survived: " + highScore;
 

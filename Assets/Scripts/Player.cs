@@ -56,6 +56,14 @@ public class Player : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<MouseMovement>().enabled = false;
 
+        foreach (Weapon weapon in GetComponentsInChildren<Weapon>())
+        {
+            weapon.enabled = false;
+        }
+
+        SoundManager.Instance.zombieChannel.volume = 0f;
+        SoundManager.Instance.zombieChannel2.volume = 0f;
+
         Animator cameraAnimator = Camera.main.GetComponent<Animator>();
         if (cameraAnimator != null) cameraAnimator.enabled = true;
 
@@ -74,12 +82,12 @@ public class Player : MonoBehaviour
         }
 
         StartCoroutine(ReturnToMainMenu());
-    }    
+    }
 
     private IEnumerator ReturnToMainMenu()
     {
         yield return new WaitForSeconds(6f);
-        SceneManager.LoadScene("Main Menu"); 
+        SceneManager.LoadScene("MainMenu"); 
     }
 
     private IEnumerator BloodyScreenEffect()
