@@ -1,0 +1,1 @@
+Jeżeli gra jest odpalana w edytorze UNITY, aby działała należy odpalić ją z sceny MainMenu w folderze ASSETS/Scenes/MainMenu.
